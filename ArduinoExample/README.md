@@ -7,7 +7,9 @@ Make sure to first install Arduino librairie "SCServo".
 ![Install_SCServo_librairy](../assets/SCServo.jpg "Install SCServo with Arduino librairie manager")
 
 Use Feetech software to set IDs :
+
 [https://github.com/Robot-Maker-SAS/FeetechServo/tree/main/feetech%20debug%20tool%20master/FD1.9.8.2)
+
 Hand Demo is set to use IDs 10-17
 
 # Summary in English (tutorial link is in french...)
@@ -35,6 +37,7 @@ Rx arduino pin connected to Tx pin on TTLinker / Tx arduino pin connected to Rx 
 ![Arduino_Mega_PortCom](../assets/Arduino_Mega.jpg)
 
 Rx and Tx pin used on arduino Mega are RX1 & TX1 (19 & 18)
+
 
 
 
