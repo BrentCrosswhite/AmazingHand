@@ -13,7 +13,7 @@ int CloseSpeed =750;
 int MiddlePos[8]={520,511,500,490,515,520,480,511}; // replace values by your calibration results
 
 //Servo IDs
-int Servo_ID[8]={10,11,12,13,14,15,16,17};
+int Servo_ID[8]={1,2,3,4,5,6,7,8};
 
 //Servo control
 float Step = 0.293; // 300°/1024
