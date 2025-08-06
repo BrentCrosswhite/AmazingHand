@@ -12,6 +12,8 @@ int CloseSpeed =750;
 //Fingers middle poses 
 int MiddlePos[8]={520,511,500,490,515,520,480,511}; // replace values by your calibration results
 
+//Servo IDs
+int Servo_ID[8]={1,2,3,4,5,6,7,8};
 
 //Servo control
 float Step = 0.293; // 300°/1024
@@ -268,18 +270,18 @@ void Fuck()
 
 void Move_Index (float Pos_1, float Pos_2, int Speed)
 {
-  sc.RegWritePos(1, MiddlePos[0]+Pos_1/Step, 0, Speed);sc.RegWritePos(2, MiddlePos[1]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
+  sc.RegWritePos(Servo_ID[0], MiddlePos[0]+Pos_1/Step, 0, Speed);sc.RegWritePos(Servo_ID[1], MiddlePos[1]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
 }
 void Move_Middle (float Pos_1, float Pos_2, int Speed)
 {
-  sc.RegWritePos(3, MiddlePos[2]+Pos_1/Step, 0, Speed);sc.RegWritePos(4, MiddlePos[3]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
+  sc.RegWritePos(Servo_ID[2], MiddlePos[2]+Pos_1/Step, 0, Speed);sc.RegWritePos(Servo_ID[3], MiddlePos[3]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
 }
 void Move_Ring (float Pos_1, float Pos_2, int Speed)
 {
-  sc.RegWritePos(5, MiddlePos[4]+Pos_1/Step, 0, Speed);sc.RegWritePos(6, MiddlePos[5]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
+  sc.RegWritePos(Servo_ID[4], MiddlePos[4]+Pos_1/Step, 0, Speed);sc.RegWritePos(Servo_ID[5], MiddlePos[5]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
 }
 void Move_Thumb (float Pos_1, float Pos_2, int Speed)
 {
-  sc.RegWritePos(7, MiddlePos[6]+Pos_1/Step, 0, Speed);sc.RegWritePos(8, MiddlePos[7]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
+  sc.RegWritePos(Servo_ID[6], MiddlePos[6]+Pos_1/Step, 0, Speed);sc.RegWritePos(Servo_ID[7], MiddlePos[7]+Pos_2/Step, 0, Speed);sc.RegWriteAction();
 }
   

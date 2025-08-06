@@ -14,6 +14,9 @@ CloseSpeed = 3
 #Fingers middle poses
 MiddlePos = [3, 0, -5, -8, -2, 5, -12, 0] # replace values by your calibration results
 
+#Set IDs for each finger
+Servo_ID = [1,2,3,4,5,6,7,8]  # 1-2 Index // 3-4 Middle // 5-6 Ring // 7-8 Thumb
+
 c = Scs0009PyController(
         serial_port="COM11",
         baudrate=1000000,
@@ -234,47 +237,47 @@ def Fuck():
   
 def Move_Index (Angle_1,Angle_2,Speed):
     
-    c.write_goal_speed(1, Speed)
+    c.write_goal_speed(Servo_ID[0], Speed)
     time.sleep(0.0002)
-    c.write_goal_speed(2, Speed)
+    c.write_goal_speed(Servo_ID[1], Speed)
     time.sleep(0.0002)
     Pos_1 = np.deg2rad(MiddlePos[0]+Angle_1)
     Pos_2 = np.deg2rad(MiddlePos[1]+Angle_2)
-    c.write_goal_position(1, Pos_1)
-    c.write_goal_position(2, Pos_2)
+    c.write_goal_position(Servo_ID[0], Pos_1)
+    c.write_goal_position(Servo_ID[1], Pos_2)
     time.sleep(0.005)
 
 def Move_Middle(Angle_1,Angle_2,Speed):    
-    c.write_goal_speed(3, Speed)
+    c.write_goal_speed(Servo_ID[2], Speed)
     time.sleep(0.0002)
-    c.write_goal_speed(4, Speed)
+    c.write_goal_speed(Servo_ID[3], Speed)
     time.sleep(0.0002)
     Pos_1 = np.deg2rad(MiddlePos[2]+Angle_1)
     Pos_2 = np.deg2rad(MiddlePos[3]+Angle_2)
-    c.write_goal_position(3, Pos_1)
-    c.write_goal_position(4, Pos_2)
+    c.write_goal_position(Servo_ID[2], Pos_1)
+    c.write_goal_position(Servo_ID[3], Pos_2)
     time.sleep(0.005)
 
 def Move_Ring(Angle_1,Angle_2,Speed):    
-    c.write_goal_speed(5, Speed)
+    c.write_goal_speed(Servo_ID[4], Speed)
     time.sleep(0.0002)
-    c.write_goal_speed(6, Speed)
+    c.write_goal_speed(Servo_ID[5], Speed)
     time.sleep(0.0002)
     Pos_1 = np.deg2rad(MiddlePos[4]+Angle_1)
     Pos_2 = np.deg2rad(MiddlePos[5]+Angle_2)
-    c.write_goal_position(5, Pos_1)
-    c.write_goal_position(6, Pos_2)
+    c.write_goal_position(Servo_ID[4], Pos_1)
+    c.write_goal_position(Servo_ID[5], Pos_2)
     time.sleep(0.005)
 
 def Move_Thumb(Angle_1,Angle_2,Speed):    
-    c.write_goal_speed(7, Speed)
+    c.write_goal_speed(Servo_ID[6], Speed)
     time.sleep(0.0002)
-    c.write_goal_speed(8, Speed)
+    c.write_goal_speed(Servo_ID[7], Speed)
     time.sleep(0.0002)
     Pos_1 = np.deg2rad(MiddlePos[6]+Angle_1)
     Pos_2 = np.deg2rad(MiddlePos[7]+Angle_2)
-    c.write_goal_position(7, Pos_1)
-    c.write_goal_position(8, Pos_2)
+    c.write_goal_position(Servo_ID[6], Pos_1)
+    c.write_goal_position(Servo_ID[7], Pos_2)
     time.sleep(0.005)
 
 
